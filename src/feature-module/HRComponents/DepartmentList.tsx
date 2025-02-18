@@ -18,7 +18,7 @@ const DepartmentList = () => {
   const columns = [
     {
       title: 'Department Id',
-      dataIndex: 'id ',
+      dataIndex: 'id',
     },
     {
       title: "Department Name",

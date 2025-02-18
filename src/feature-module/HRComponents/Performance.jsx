@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { all_routes } from "../router/all_routes";
 import { estimate_details } from "../../core/data/json/estimates-details";
 import ImageWithBasePath from "../../core/common/imageWithBasePath";
@@ -149,26 +149,23 @@ const Performance = () => {
                 <i className="fa-solid fa-users mx-2" />
                 Talent . 4 . 52%
               </span>
-              <Link to={all_routes.goals}>
-              <span className="d-flex align-items-center mx-2 my-2">
-                <i className="fa-regular fa-file-lines mx-2" />
+          
+              <span className="d-flex align-items-center mx-2 my-2" onClick={() =>navigate(all_routes.goals)}>
+                <i className="fa-regular fa-file-lines mx-2"  />
                 Documents
               </span>
-              </Link>
+          
 
-              <span className="d-flex align-items-center mx-2 my-2">
-                <Link to={all_routes.employeecalendar}>
+              <span className="d-flex align-items-center mx-2 my-2"  onClick={() =>navigate(all_routes.employeecalendar)}>
                 <i className="fa-solid fa-stopwatch mx-2" />
                 Time off
-                </Link>
-
               </span>
-              <Link to={all_routes.compensation}>
-              <span className="d-flex align-items-center mx-2 my-2">
+             
+              <span className="d-flex align-items-center mx-2 my-2" onClick={() =>navigate(all_routes.compensation)}>
                 <i className="fa-brands fa-galactic-republic mx-2" />
                 Compensation
               </span>
-              </Link>
+     
             </div>
           </div>
         </div>

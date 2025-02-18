@@ -61,7 +61,7 @@ export const all_routes = {
   noteslist: "/noteslist",
   notesapp: "/notesapp",
    //Projects
-   
+  //  projectlist: "/projectlist",
    projectdashboard: "/project/projectdashboard",
    scheduling: "/project/scheduling",
    scheduletimeline: "/project/scheduletimeline",
@@ -406,8 +406,6 @@ export const all_routes = {
   membershipplan: "/membership-plans",
   membershipAddon: "/membership-addons",
   membershipTransaction: "/membership-transactions",
-
-
 
   layoutDefault: "/layout-default",
   layoutMini: "/layout-mini",

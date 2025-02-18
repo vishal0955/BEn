@@ -49,6 +49,18 @@ const Todo = () => {
           
            
               <div className="d-flex my-xl-auto right-content align-items-center flex-wrap ">
+              <div className="mb-3">
+                  <Link to={all_routes.addtask} >
+                  <button
+                    className="btn btn-primary"
+                    // data-bs-toggle="modal" data-inert={true}
+                    // data-bs-target="#add_todo"
+                  >
+                    <i className="ti ti-plus me-2" />
+                    New task
+                  </button>
+                  </Link>
+                </div>
                 
                 <div className="d-flex align-items-center border rounded p-1 me-2">
                 <div className="px-1">
@@ -108,18 +120,7 @@ const Todo = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mb-3">
-                  <Link to={all_routes.addtask} >
-                  <button
-                    className="btn btn-primary"
-                    // data-bs-toggle="modal" data-inert={true}
-                    // data-bs-target="#add_todo"
-                  >
-                    <i className="ti ti-plus me-2" />
-                    New task
-                  </button>
-                  </Link>
-                </div>
+              
                 <div className="row border-bottom mb-3">
                   <div className="col-lg-6">
                     <div className="d-flex align-items-center flex-wrap row-gap-3 mb-3">

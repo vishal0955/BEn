@@ -114,31 +114,7 @@ export const SidebarDataTest = [
           // materialicons: 'topic',
           submenuItems: [
             {
-              label: 'Dashboard',
-              link: routes.hrdashboard ,
-            },
-            { label: 'My Profile',
-               link: routes.hrmyprofile,
-             },
-             {
-              label: 'People',
-               link: routes.employeecalendar,
-            },
-            {
-              label: 'Performance',
-              link: routes.performance,
-         
-            },
-            {
-              label: 'Recruitment',
-              link: routes.recruitment,
-            },
-            {
-              label: 'Company',
-              link: routes.organization,
-            },
-            {
-              label: 'HR Dashboard',
+              label: 'Employee Setup',
               link: routes.hrorgdashboard,
             },
             {
@@ -179,6 +155,56 @@ export const SidebarDataTest = [
 
               ],
             },
+            {
+              label: 'Attendence',
+              base: 'hrorgdashboard',
+              submenu: true,
+              showSubRoute: false,
+              icon: 'cash',
+              submenuItems: [
+                {
+                  label: ' Attendance',
+                  link: routes.attendanceadmin,
+                  base: 'attendanceadmin',
+                },
+                {
+                  label: 'Leave  ',
+                  link: routes.employeecalendar,
+                  base: 'attendanceadmin',
+                },
+
+
+              ]
+
+
+            },
+        //  PRoject Manager Dashborad as in miro
+            // {
+            //   label: 'Dashboard',
+            //   link: routes.hrdashboard ,
+            // },
+            // { label: 'My Profile',
+            //    link: routes.hrmyprofile,
+            //  },
+            //  {
+            //   label: 'People',
+            //    link: routes.employeecalendar,
+            // },
+            {
+              label: 'Performance',
+              link: routes.performance,
+         
+            },
+            {
+              label: 'Recruitment',
+              link: routes.recruitment,
+            },
+            {
+              label: 'Company',
+              link: routes.organization,
+            },
+          
+        
 
           ],
         },

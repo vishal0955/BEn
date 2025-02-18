@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Button, Table, Form, Badge } from "react-bootstrap";
+import { Container, Row, Col, Button, Table, Form, Badge, Modal } from "react-bootstrap";
 import { FaCalendarAlt, FaFilter } from "react-icons/fa";
 import dayjs from "dayjs";
+import AssignLeave from "./LeaveRequest";
 
 const EmployeeCalendar = () => {
   const [currentDate, setCurrentDate] = useState(dayjs("2024-08-01"));
@@ -73,14 +74,35 @@ const EmployeeCalendar = () => {
     return null;
   };
 
+  // const [showModal, setShowModal] = useState(false);
+  // const handleLeaveRequest = () => {
+  //   console.log("Lev")
+  //   setShowModal(true);
+  // }
+
+  const [selectedEmployee, setSelectedEmployee] = useState(null);
+const [showModal, setShowModal] = useState(false);
+
+const handleLeaveRequest = (employee) => {
+  setSelectedEmployee(employee);
+  setShowModal(true);
+};
+
+
   return (
     <div className="page-wrapper">
-    <Container fluid className="p-4 bg-light text-dark" style={{ minHeight: "100vh" }}>
+    <div className="container-fluid p-4 bg-light text-dark" style={{ minHeight: "100vh" }}>
+      <div className="row mb-4">
+        <div className="col-md-12"> 
+        <i className="ti ti-list-tree me-auto" />
+        </div>
+      </div>
+   
       {/* Header Section */}
       <Row className="mb-4">
         <Col>
           <h4 className="d-flex align-items-center">
-            <FaCalendarAlt className="me-2" /> Time Management
+            <FaCalendarAlt className="me-2" /> Leave Management
           </h4>
         </Col>
         <Col className="text-end">
@@ -111,7 +133,7 @@ const EmployeeCalendar = () => {
       </Row>
 
       {/* Leave Request */}
-      <Row className="mb-3">
+      <Row className="mb-3" onClick={handleLeaveRequest}>
         <Col>
           <div className="p-3 bg-white border rounded shadow-sm">
             <strong>8 - 12 Aug 2024 · Annual Leave</strong>
@@ -152,31 +174,61 @@ const EmployeeCalendar = () => {
                 ))}
               </tr>
             </thead>
+
             <tbody>
               {employees.map((employee, empIndex) => (
                 <tr key={empIndex}>
-                  <td>
+                  <td onClick={()=>handleLeaveRequest(employee.name)} >
                     <span className="me-2">{employee.profile}</span>
                     {employee.name}
+
+                    {<Modal show={showModal} onHide={() => setShowModal(false)} size="lg">
+          <Modal.Header closeButton>
+            
+          </Modal.Header>
+          <Modal.Body>
+          <AssignLeave employeename={employee.name}  />
+     
+          </Modal.Body>
+        </Modal>
+        }
                   </td>
+             
                   {getDatesForView().map((date, dateIndex) => {
                     const status = getCellStatus(date, employee);
                     return (
-                      <td key={dateIndex} className="text-center">
+                      <td key={dateIndex} className="text-center" onClick={handleLeaveRequest}>
                         {status === "approved" && <Badge bg="success">✔</Badge>}
                         {status === "pending" && <Badge bg="warning">⏳</Badge>}
                         {status === "restricted" && <Badge bg="danger">🚫</Badge>}
                         {!status && "×"}
                       </td>
                     );
-                  })}
+                  }
+                  )}
                 </tr>
               ))}
             </tbody>
           </Table>
         </Col>
       </Row>
-    </Container>
+    </div>
+
+    
+           {/* {<Modal show={showModal} onHide={() => setShowModal(false)} size="lg">
+          <Modal.Header closeButton>
+            
+          </Modal.Header>
+          <Modal.Body>
+          <AssignLeave employeename={employee.name}  />
+     
+          </Modal.Body>
+        </Modal>
+        } */}
+
+
+
+
     </div>
   );
 };

@@ -398,6 +398,7 @@ import PayRollDeduction from "../HRComponents/payrool/payrollDedution";
 import AttendanceAdmin from "../HRComponents/AttendanceAdmin";
 import DepartmentList from "../HRComponents/DepartmentList";
 import DesignationList from "../HRComponents/DesignationList";
+import ProjectOwner from "../Project/Tables/ProjectOwner";
 
 const routes = all_routes;
 export const publicRoutes = [
@@ -663,6 +664,11 @@ export const publicRoutes = [
   {
     path: routes.invordercard,
     element: <OrderDetails />,
+    route: Route,
+  },
+  {
+    path: routes.projectlist,
+    elements: <ProjectOwner />,
     route: Route,
   },
   {

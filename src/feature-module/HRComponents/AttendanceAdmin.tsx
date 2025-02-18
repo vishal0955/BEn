@@ -129,7 +129,7 @@ const AttendanceAdmin = () => {
                   </li>
                   <li className="breadcrumb-item">Employee</li>
                   <li className="breadcrumb-item active" aria-current="page">
-                    Attendance Admin
+                    Attendance 
                   </li>
                 </ol>
               </nav>

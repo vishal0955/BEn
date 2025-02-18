@@ -1,6 +1,6 @@
 import React from "react";
 import {  Route, Routes } from "react-router";
-import { authRoutes, publicRoutes } from "./router.link";
+import { authRoutes, publicRoutes, userRoutes } from "./router.link";
 import Feature from "../feature";
 import AuthFeature from "../authFeature";
 import InventoryRoutes from "./InventoryRoutes";
@@ -10,6 +10,7 @@ import Demo from "../Inventory/Demo";
 import InventoryOrderList from "../Inventory/InventoryOrderList";
 import InventoryIndex from "../Inventory/InventoryIndex";
 import Inventory from "../Inventory/Inventory";
+import UserLayout from "../UserLayout";
 // import OrdersPage from "../Inventory/OrdersPage";
 
 const ALLRoutes: React.FC = () => {
@@ -34,6 +35,13 @@ const ALLRoutes: React.FC = () => {
               <Route path="demo" element={<Demo />} />
 
           </Route>
+        </Route>
+
+        <Route element={<UserLayout />}>
+          {userRoutes.map((route, idx) => (
+            <Route path={route.path} element={route.element} key={idx} />
+          ))}
+        
         </Route>
 
         <Route element={<AuthFeature />}>

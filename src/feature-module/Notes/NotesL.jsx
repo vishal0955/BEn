@@ -64,9 +64,9 @@ const NotesL = () => {
         <div className="page-wrapper">
           <div className="content pb-4">
             {/* Breadcrumb */}
-            {/* <div className="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3">
+            <div className="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-2">
               <div className="my-auto mb-2">
-                <h2 className="mb-1">Notes</h2>
+             
                 <nav>
                   <ol className="breadcrumb mb-0">
                     <li className="breadcrumb-item">
@@ -81,8 +81,31 @@ const NotesL = () => {
                   </ol>
                 </nav>
               </div>
-              <div className="d-flex my-xl-auto right-content align-items-center flex-wrap ">
-                <div className="me-2 mb-2">
+              <div className="d-flex my-xl-auto right-content align-items-center flex-wrap grid gap-3">
+              <div className="">
+                  <div className="input-icon-start position-relative">
+                    <span className="input-icon-addon">
+                      <i className="ti ti-search" />
+                    </span>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search Todo List"
+                    />
+                  </div>
+                </div>
+                  <div className="d-flex align-items-center border rounded p-1 me-2">                    
+                                  <Link to={all_routes.notesapp} className="btn btn-icon btn-sm">
+                                    <i className="ti ti-list-tree" />
+                                  </Link>
+                                  <Link
+                                    to={all_routes.note}
+                                    className="btn btn-icon btn-sm active bg-primary text-white"
+                                  >
+                                    <i className="ti ti-table" />
+                                  </Link>
+                                </div>
+                <div className=" ">
                   <div className="dropdown">
                     <Link
                       to="#"
@@ -114,9 +137,9 @@ const NotesL = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="mb-2">
+                {/* <div className="">
                   <Link
-                    to="#"
+                    to=""
                     className="btn btn-primary d-flex align-items-center"
                     data-bs-toggle="modal" data-inert={true}
                     data-bs-target="#add_note"
@@ -124,13 +147,49 @@ const NotesL = () => {
                     <i className="ti ti-circle-plus me-2" />
                     Add Notes
                   </Link>
-                </div>
+                </div> */}
                 <div className="ms-2 head-icons">
                   <CollapseHeader />
                 </div>
               </div>
-            </div> */}
+            </div>
+            <div className="bg-white rounded-3 d-flex align-items-center justify-content-between flex-wrap mb-4 p-3 pb-0">
+                  <div className="d-flex align-items-center mb-3">
+                    <div className="me-3">
+                      <CommonSelect
+                        className="select"
+                        options={optionsChoose}
+                        defaultValue={optionsChoose[0]}
+                      />
+                    </div>
+                    <Link to="#" className="btn btn-light">
+                      Apply
+                    </Link>
+                  </div>
+                  {/* <div className="btn btn-primary">
+                    <Link to={all_routes.notesapp}>
+                    <button > List View </button>
+                    </Link>
+                  </div> */}
+          
+                 <div className="d-flex align-items-center justify-space-between mb-3 grid gap-3">
+               
+                 {/* <button   className='btn' onClick={() => navigate(all_routes.notesapp)}  >
+              <i className="ti ti-list-tree"  />
+          </button>  */}
+                  <div className="form-sort d-flex">
+            
+                    <i className="ti ti-filter feather-filter info-img" />
+                    <CommonSelect
+                      className="select"
+                      options={recentChoose}
+                      defaultValue={recentChoose[0]}
+                    />
+                  </div>
+                  </div>
+                </div>
             <div className="row">
+          
               <div className="col-xl-3 col-md-12 sidebars-right theiaStickySidebar section-bulk-widget">
                 <div className="border rounded-3 bg-white p-3">
                   <div className="mb-3 pb-3 border-bottom">
@@ -259,40 +318,7 @@ const NotesL = () => {
                 </div>
               </div>
               <div className="col-xl-9 budget-role-notes">
-                <div className="bg-white rounded-3 d-flex align-items-center justify-content-between flex-wrap mb-4 p-3 pb-0">
-                  <div className="d-flex align-items-center mb-3">
-                    <div className="me-3">
-                      <CommonSelect
-                        className="select"
-                        options={optionsChoose}
-                        defaultValue={optionsChoose[0]}
-                      />
-                    </div>
-                    <Link to="#" className="btn btn-light">
-                      Apply
-                    </Link>
-                  </div>
-                  {/* <div className="btn btn-primary">
-                    <Link to={all_routes.notesapp}>
-                    <button > List View </button>
-                    </Link>
-                  </div> */}
-          
-                 <div className="d-flex align-items-center justify-space-between mb-3">
-                 <button   className='btn' onClick={() => navigate(all_routes.notesapp)}>
-              <i className="ti ti-list-tree"  />
-          </button> 
-                  <div className="form-sort d-flex">
-            
-                    <i className="ti ti-filter feather-filter info-img" />
-                    <CommonSelect
-                      className="select"
-                      options={recentChoose}
-                      defaultValue={recentChoose[0]}
-                    />
-                  </div>
-                  </div>
-                </div>
+              
                 <div className="tab-content" id="v-pills-tabContent2">
                   <div
                     className="tab-pane fade active show"

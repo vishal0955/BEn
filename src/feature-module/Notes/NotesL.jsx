@@ -23,6 +23,12 @@ const NotesL = () => {
     { value: "Last Modified", label: "Last Modified" },
     { value: "Last Modified by me", label: "Last Modified by me" }
   ];
+  const recentChooseoption = [
+    { value: "Short", label: "Short" },
+    { value: "Client 1", label: "Client 1" },
+    { value: "Client 2", label: "Client 2" }
+  ];
+
 
   const settings = {
     dots: false,
@@ -162,15 +168,18 @@ const NotesL = () => {
                         defaultValue={optionsChoose[0]}
                       />
                     </div>
-                    <Link to="#" className="btn btn-light">
+                    <div className="me-3">
+                      <CommonSelect
+                        className="select"
+                        options={recentChooseoption}
+                        defaultValue={recentChooseoption[0]}
+                      />
+                    </div>
+                    {/* <Link to="#" className="btn btn-light">
                       Apply
-                    </Link>
+                    </Link> */}
                   </div>
-                  {/* <div className="btn btn-primary">
-                    <Link to={all_routes.notesapp}>
-                    <button > List View </button>
-                    </Link>
-                  </div> */}
+        
           
                  <div className="d-flex align-items-center justify-space-between mb-3 grid gap-3">
                
@@ -331,7 +340,7 @@ const NotesL = () => {
                         <div className="col-md-12">
                           <div className="d-flex align-items-center justify-content-between flex-wrap mb-2">
                             <div className="d-flex align-items-center mb-3">
-                              <h4>Important Notes </h4>
+                              <h4>All Notes </h4>
                               <div className="owl-nav slide-nav5 text-end nav-control ms-3" />
                             </div>
                             <div className="notes-close mb-3">
@@ -2598,7 +2607,7 @@ const NotesL = () => {
             </div>
           </div>
           {/* <div className="footer d-sm-flex align-items-center justify-content-between border-top bg-white p-3">
-            <p className="mb-0">2014 - 2025 © SmartHR.</p>
+            <p className="mb-0">2014 - 2025 © BPAV</p>
             <p>
               Designed &amp; Developed By{" "}
               <Link to="#" className="text-primary">

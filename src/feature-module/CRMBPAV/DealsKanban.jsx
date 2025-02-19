@@ -35,6 +35,8 @@ const DealsKanban = () => {
 
         {/* Tabs Section */}
         <div className="d-flex mb-4 flex-wrap">
+      </div>
+      {/* <div className=" d-flex mb-4  flex-wrap  ">
           {tabs.map((tab, index) => (
             <div
               key={index}
@@ -60,7 +62,7 @@ const DealsKanban = () => {
             <button className="btn btn-a text-primary fw-medium">+ Add view (5/50)</button>
             <button className="btn btn-a text-primary fw-medium">All views</button>
           </div>
-        </div>
+        </div> */}
 
         {/* Filters Section */}
         <div className="d-flex justify-content-between align-items-center mb-3">
@@ -180,8 +182,81 @@ const DealsKanban = () => {
             </tfoot>
           </Table>
         </div>
-      </Container>
-    </div>
+      
+      
+      <Row className="mt-4 text-center" >
+        {[
+          { title: "TOTAL DEAL AMOUNT", value: "£1.18M", detail: "Average per deal: £4.09K" },
+          { title: "WEIGHTED DEAL AMOUNT", value: "£616.62K", detail: "Average per deal: £2.13K" },
+          { title: "OPEN DEAL AMOUNT", value: "£590.58K", detail: "Average per deal: £10.01K" },
+          { title: "CLOSED DEAL AMOUNT", value: "£201.02K", detail: "Average per deal: £1.65K" },
+          { title: "NEW DEAL AMOUNT", value: "£0", detail: "" },
+          { title: "AVERAGE DEAL AGE", value: "22 days", detail: "" },
+        ].map((item, index) => (
+          <Col key={index}>
+            <h5 className="fw-bold">{item.title}</h5>
+            <h3 className="text-primary">{item.value}</h3>
+            {item.detail && <p>{item.detail}</p>}
+          </Col>
+        ))}
+      
+      </Row>
+       {/* Table Section */}
+      <div className="overflow-auto pt-4 mt-2" style={{ whiteSpace: "nowrap" }}>
+        <Table bordered className="text-center">
+          <thead className="bg-light">
+            <tr>
+              <th>Qualified</th>
+              <th>Contact Made</th>
+              <th>Meeting Scheduled</th>
+              <th>Quoting</th>
+              <th>Quoted</th>
+              <th>Closed One</th>
+              <th>Closed Lost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+              <Link to={all_routes.dealscard}>
+                <div className="d-flex flex-column align-items-start">
+                 
+                  <span>StraightIn Lead</span>
+                  <Button size="sm" variant="outline-primary" className="mt-2">
+                    Add Contact
+                  </Button>
+                  <small className="text-muted mt-2">
+                    No activity for 9 days
+                  </small>
+                </div>
+                </Link>
+              </td>
+              <td>No activity</td>
+              <td>No activity</td>
+              <td>No activity</td>
+              <td>No activity</td>
+              <td>No activity </td>
+              <td>No activity </td>
+            </tr>
+          </tbody>
+          <tfoot className="bg-light">
+            <tr>
+              <td>Total: £0</td>
+              <td>Total: £0</td>
+              <td>Total: £0</td>
+              <td>Total: £0</td>
+              <td>Total: £0</td>
+              <td>Total: £0</td>
+              <td>Total: £0</td>
+            </tr>
+          </tfoot>
+        </Table>
+      </div>
+      
+
+      </Container
+      >
+   </div>
   );
 };
 

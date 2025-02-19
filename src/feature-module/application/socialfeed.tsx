@@ -136,19 +136,19 @@ const SocialFeed = () => {
                     >
                       <span>
                         <i className="ti ti-brand-feedly me-2" />
-                        All Feeds
+                        Timeline
                       </span>
                       <span className="badge badge-danger badge-xs rounded-pill">
                         56
                       </span>
                     </Link>
-                    <Link
+                    {/* <Link
                       to="#"
                       className="d-flex align-items-center fw-medium p-2"
                     >
                       <i className="ti ti-mood-search me-2" />
                       Explore
-                    </Link>
+                    </Link> */}
                     <Link
                       to="#"
                       className="d-flex align-items-center fw-medium p-2"
@@ -156,13 +156,13 @@ const SocialFeed = () => {
                       <i className="ti ti-mail-check me-2" />
                       Messages
                     </Link>
-                    <Link
+                    {/* <Link
                       to="#"
                       className="d-flex align-items-center fw-medium p-2"
                     >
                       <i className="ti ti-list me-2" />
                       Lists
-                    </Link>
+                    </Link> */}
                     <Link
                       to="#"
                       className="d-flex align-items-center fw-medium p-2"
@@ -170,14 +170,14 @@ const SocialFeed = () => {
                       <i className="ti ti-bookmark me-2" />
                       Bookmark
                     </Link>
-                    <Link
+                    {/* <Link
                       to="#"
                       className="d-flex align-items-center fw-medium p-2"
                     >
                       <i className="ti ti-coffee me-2" />
                       Marketplace
-                    </Link>
-                    <Link
+                    </Link> */}
+                    {/* <Link
                       to="#"
                       className="d-flex align-items-center justify-content-between fw-medium p-2"
                     >
@@ -188,14 +188,14 @@ const SocialFeed = () => {
                       <span className="badge badge-info badge-xs rounded-pill">
                         14
                       </span>
-                    </Link>
-                    <Link
+                    </Link> */}
+                    {/* <Link
                       to="#"
                       className="d-flex align-items-center fw-medium p-2"
                     >
                       <i className="ti ti-music me-2" />
                       Media
-                    </Link>
+                    </Link> */}
                     <Link
                       to="#"
                       className="d-flex align-items-center fw-medium p-2"
@@ -387,7 +387,7 @@ const SocialFeed = () => {
                     </form>
                   </div>
                 </div>
-                <div className="card">
+                {/* <div className="card">
                   <div className="card-body">
                     <div className="d-flex align-items-center mb-3">
                       <h5 className="me-2">Popular Channels</h5>
@@ -420,7 +420,7 @@ const SocialFeed = () => {
                       </Link>
                     </Slider>
                   </div>
-                </div>
+                </div> */}
                 <div className="card">
                   <div className="card-header border-0 pb-0">
                     <div className="d-flex align-items-center justify-content-between border-bottom flex-wrap row-gap-3 pb-3">
@@ -1257,7 +1257,7 @@ const SocialFeed = () => {
               <div className="sticky-class">
               <div className="card ">
                 <div className="card-body">
-                  <h5 className="mb-3">Peoples</h5>
+                  <h5 className="mb-3">People</h5>
                   <ul
                     className="nav nav-pills border d-flex p-2 rounded mb-3"
                     id="pills-tab"
@@ -1284,7 +1284,7 @@ const SocialFeed = () => {
                         role="tab"
                         aria-selected="false"
                       >
-                        Primary
+                      starred
                       </button>
                     </li>
                   </ul>
@@ -1788,7 +1788,7 @@ const SocialFeed = () => {
           </div>
         </div>
         <div className="footer d-sm-flex align-items-center justify-content-between bg-white border-top p-3">
-          <p className="mb-0">2014 - 2025 © SmartHR.</p>
+          <p className="mb-0">2014 - 2025 © BPAV</p>
           <p>
             Designed &amp; Developed By{" "}
             <Link to="#" className="text-primary">

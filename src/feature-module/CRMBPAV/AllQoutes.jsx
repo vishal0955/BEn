@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import QuotesTable from "./QuotesTable";
 import CompaniesCard from "./CompaniesCard";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Form,
+  Nav,
+  Table,
+  Dropdown,
+} from "react-bootstrap";
 
 const columns = (onSelectCompany) => [
   {
@@ -59,9 +69,9 @@ function AllQuotes() {
       <div className="main-container">
         {selectedCompany ? (
           <div>
-            <button className="btn btn-info mb-3" onClick={() => setSelectedCompany(null)}>
+            {/* <button className="btn btn-info mb-3" onClick={() => setSelectedCompany(null)}>
               ← Back to Quotes
-            </button>
+            </button> */}
             <CompaniesCard company={selectedCompany} />
           </div>
         ) : (
@@ -70,7 +80,7 @@ function AllQuotes() {
               <header className="d-flex justify-content-between align-items-center">
                 <div className="align-items-center">
                   <h4 className="contacts-title" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
-                    Quoters
+                    Quotes
                   </h4>
                 </div>
                 <div className="header-actions d-flex align-items-center gap-3">
@@ -83,6 +93,22 @@ function AllQuotes() {
                 </div>
               </header>
             </div>
+            <Row className="mt-4 text-center mt-2 mb-2">
+          {[
+            { title: "Total Amount Of Quotes.", value: "£1.18M", detail: "Average per deal: £4.09K" },
+            { title: "Quotes Per Status", value: "£616.62K", detail: "Average per deal: £2.13K" },
+            { title: "OPEN DEAL AMOUNT", value: "£590.58K", detail: "Average per deal: £10.01K" },
+            { title: "All Amount of Quotes", value: "£201.02K", detail: "Average per deal: £1.65K" },
+            { title: "New Quotes", value: "£0", detail: "" },
+            { title: "Quotes Amount Status", value: "22 days", detail: "" },
+          ].map((item, index) => (
+            <Col key={index}>
+              <h5 className="fw-bold">{item.title}</h5>
+              <h3 className="text-primary">{item.value}</h3>
+              {item.detail && <p>{item.detail}</p>}
+            </Col>
+          ))}
+        </Row>
             <div className="card-body p-0">
               <QuotesTable dataSource={data} columns={columns(setSelectedCompany)} Selection={true} />
             </div>

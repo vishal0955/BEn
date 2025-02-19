@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState } from "react";
+import { Button, Accordion, Dropdown } from "react-bootstrap";
+import {
+  FaChevronRight,
+  FaChevronDown,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 
 const ContactCard = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const activities = [
     {
       date: "24 Dec 2024 at 11:48 GMT",
@@ -31,8 +38,204 @@ const ContactCard = () => {
       status: "created by Conversations",
     },
   ];
-  return (
 
+  const menuItems = [
+    {
+      title: "Companies (1)",
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="badge bg-primary me-2">Primary</span>
+            <span className="fw-bold">zohoinvoice.com</span>
+          </div>
+          <div className="d-flex align-items-center">
+            <a
+              href="https://sender.zohoinvoice.com"
+              className="text-decoration-none text-info"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              sender.zohoinvoice.com <FaExternalLinkAlt className="ms-1" />
+            </a>
+          </div>
+          <p className="mt-2 mb-0">Phone: --</p>
+        </div>
+      ),
+    },
+    {
+      title: "Contact (0)",
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="fw-bold">
+              See the people associated with this record.
+            </span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Leads (0)",
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="badge bg-primary me-2">Primary</span>
+            <span className="fw-bold">zohoinvoice.com</span>
+          </div>
+          <div className="d-flex align-items-center">
+            <a
+              href="https://sender.zohoinvoice.com"
+              className="text-decoration-none text-info"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              sender.zohoinvoice.com <FaExternalLinkAlt className="ms-1" />
+            </a>
+          </div>
+          <p className="mt-2 mb-0">Phone: --</p>
+        </div>
+      ),
+    },
+
+    {
+      title: "Deals (0)",
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="fw-bold">
+              Track the revenue opportunities associated with this record.
+            </span>
+          </div>
+        </div>
+      ),
+    },
+
+    {
+      title: "Tickets (2)",
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="fw-bold">
+              Track the customer requests associated with this record.
+            </span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Invoice (0)",
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="fw-bold">
+              Send your customer a request for payment and associate it with
+              this record.
+            </span>
+          </div>
+          <div className="d-flex align-items-center">
+            <button
+              style={{
+                border: "none",
+                background: "none",
+                color: "blue",
+                cursor: "pointer",
+              }}
+            >
+              Set up Payment
+            </button>
+          </div>
+        </div>
+      ),
+      dropdown: (
+        <Dropdown>
+          <Dropdown.Toggle
+            variant="link"
+            className="p-0 text-secondary fw-bold"
+          >
+            Add
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item href="#">Action</Dropdown.Item>
+            <Dropdown.Item href="#">Another action</Dropdown.Item>
+            <Dropdown.Item href="#">Something else here</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      ),
+    },
+
+    {
+      title: "Health Score",
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="fw-bold">
+              See the people associated with this record.
+            </span>
+          </div>
+        </div>
+      ),
+    },
+
+    {
+      title: "Lead Score",
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="fw-bold">
+              See the people associated with this record.
+            </span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Payment (0)",
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="fw-bold">
+              Give customers a fast, flexible way to pay. Add a payment link to
+              accept a payment and associate it with this record.
+            </span>
+          </div>
+          <div className="d-flex align-items-center justify-content-center borderlessed">
+            <button>set up Payment</button>
+          </div>
+        </div>
+      ),
+    },
+
+    {
+      title: 'Payment {""}',
+      content: (
+        <div>
+          <div className="d-flex align-items-center mb-2">
+            <span className="fw-bold">
+              Automate subscription management and recurring billing from this
+              record.
+            </span>
+          </div>
+        </div>
+      ),
+      dropdown: (
+        <Dropdown>
+          <Dropdown.Toggle
+            variant="link"
+            className="p-0 text-secondary fw-bold"
+          >
+            Add
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item href="#">Action</Dropdown.Item>
+            <Dropdown.Item href="#">Another action</Dropdown.Item>
+            <Dropdown.Item href="#">Something else here</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      ),
+    },
+  ];
+
+  return (
     <div className="container-fluid">
       <div className="row mt-3">
         {/* Sidebar */}
@@ -40,12 +243,7 @@ const ContactCard = () => {
           <div className="card shadow-sm h-100">
             <div className="card-body">
               <div className="mb-3 d-flex justify-content-between">
-                {/* <h5 className="text-info fw-semibold">
-              <span>
-                <i className="fa-solid fa-chevron-left fs-6 me-2" />
-              </span>{" "}
-              Contacts
-            </h5> */}
+              
                 <div className="dropdown">
                   <button
                     className="btn dropdown-toggle text-info fw-semibold"
@@ -95,7 +293,10 @@ const ContactCard = () => {
                   </div>
                   <div>
                     <h5>Nikunj</h5>
-                    <a href="#" className="text-decoration-none text-info fw-semibold">
+                    <a
+                      href="#"
+                      className="text-decoration-none text-info fw-semibold"
+                    >
                       zohoinvoice.com
                     </a>
                     <p>Nikunj@zoho.com</p>
@@ -136,53 +337,139 @@ const ContactCard = () => {
                 </div>
               </div>
               <hr />
-              <div className="d-flex justify-content-between " style={{borderBottom:"1px solid grey"}}>
-                <h6>
-                  <i className="fa-solid fa-chevron-right me-2 text-info" /> About
-                  this contact
-                </h6>
-                
-                {/* <div className="dropdown">
-              <button
-                className="btn dropdown-toggle text-info fw-semibold"
-                type="button"
-                data-bs-toggle="dropdown"
-              >
-                Actions
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </div> */}
+
+              <div className="accordion" id="contactsAccordion">
+                <div className="accordion-item">
+                  <h2 className="accordion-header">
+                    <button
+                      className="accordion-button collapsed d-flex justify-content-between align-items-center w-100"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseAbout"
+                      aria-expanded={isOpen ? "true" : "false"}
+                      aria-controls="collapseAbout"
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      <span>About this contact</span>
+                      {isOpen ? (
+                        <FaChevronDown className="fs-6 text-info p-2" />
+                      ) : (
+                        <FaChevronRight className="fs-6 text-info p-2" />
+                      )}
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseAbout"
+                    className="accordion-collapse collapse"
+                    data-bs-parent="#contactsAccordion"
+                  >
+                    <div className="accordion-body">
+                      <div className="d-flex align-items-center mb-2">
+                        <span className="badge bg-primary me-2">Primary</span>
+                        <span className="fw-bold">zohoinvoice.com</span>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <a
+                          href="https://sender.zohoinvoice.com"
+                          className="text-decoration-none text-info"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          sender.zohoinvoice.com{" "}
+                          <FaExternalLinkAlt className="ms-1" />
+                        </a>
+                      </div>
+                      <p className="mt-2 mb-0">Phone: --</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="accordion-item">
+                  <h2 className="accordion-header">
+                    <button
+                      className="accordion-button collapsed d-flex justify-content-between align-items-center w-100"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseCommunication"
+                      aria-expanded="false"
+                      aria-controls="collapseCommunication"
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      <FaChevronRight className="fs-6 text-info me-3 p-2" />
+                      Communication Subcripation Intent
+                      {isOpen ? (
+                        <FaChevronDown className="fs-6 text-info p-2" />
+                      ) : (
+                        <FaChevronRight className="fs-6 text-info p-2" />
+                      )}
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseCommunication"
+                    className="accordion-collapse collapse"
+                    data-bs-parent="#contactsAccordion"
+                  >
+                    <div className="accordion-body">
+                      <div className="d-flex align-items-center mb-2">
+                        <span className="fw-bold">
+                          Use subscription types to manage the communications
+                          this contact receives from you
+                        </span>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <a
+                          href="#"
+                          className="text-decoration-none text-info"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View subscriptions
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="accordion-item">
+                  <h2 className="accordion-header">
+                    <button
+                      className="accordion-button collapsed d-flex justify-content-between align-items-center w-100"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseActivity"
+                      aria-expanded="false"
+                      aria-controls="collapseActivity"
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      <FaChevronRight className="fs-6 text-info me-3 p-2" />
+                      Website Activity
+                      {isOpen ? (
+                        <FaChevronDown className="fs-6 text-info p-2" />
+                      ) : (
+                        <FaChevronRight className="fs-6 text-info p-2" />
+                      )}
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseActivity"
+                    className="accordion-collapse collapse"
+                    data-bs-parent="#contactsAccordion"
+                  >
+                    <div className="accordion-body">
+                      <div className="d-flex align-items-center mb-2">
+                        <span className="fw-bold">
+                          Website activity shows you how many times a contact
+                          has visited your site and viewed your pages
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <hr />
-              <h6 style={{borderBottom:"1px solid grey"}}>
-                <i className="fa-solid fa-chevron-right me-2 text-info" /> Communication Subcripation
-                Intent
-              </h6>
-              
-              <h6 className='mt-3' style={{borderBottom:"1px solid grey"}}>
-                <i className="fa-solid fa-chevron-right me-2 text-info" /> Website Activity
-              </h6>
             </div>
           </div>
         </div>
         {/* Main content */}
-        <div className="col-lg-6 col-md-8 col-sm-12 content">
+        <div className="col-lg-6 col-md-8 col-sm-12 ">
           {/* <h6 className="text-end text-info fw-semibold">
             <i className="fa-solid fa-gear text-secondary fs-6 me-1" /> Customize
             record
@@ -206,29 +493,34 @@ const ContactCard = () => {
                 Activities
               </button>
             </li>
-
           </ul>
           <div className="tab-content">
             <div className="tab-pane fade show active" id="overview">
               <div className="card shadow-sm p-3">
-                <div className=" d-flex justify-content-between my-2">
+                <div className=" d-flex justify-content-between ">
                   <div className="mb-2">
                     {/* Tabs */}
-                    <div
-                      className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4"
-                    >
-                      <div className="input-group mb-3 mb-md-0" style={{ maxWidth: "400px" }}>
+                    <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+                      <div
+                        className="input-group mb-3 mb-md-0"
+                        style={{ maxWidth: "400px" }}
+                      >
                         <input
                           type="text"
                           className="form-control"
                           placeholder="Search activities"
                           aria-label="Search activities"
                         />
-                        <button className="btn btn-outline-secondary" type="button">
+                        <button
+                          className="btn btn-outline-secondary"
+                          type="button"
+                        >
                           Search
                         </button>
                       </div>
-                      <button className="btn btn-primary btn-sm">Customize record</button>
+                      <button className="btn btn-primary btn-sm">
+                        Customize record
+                      </button>
                     </div>
                     <ul
                       className="nav nav-tabs mb-3"
@@ -238,7 +530,6 @@ const ContactCard = () => {
                         fontWeight: "500",
                       }}
                     >
-
                       <li className="nav-item">
                         <a className="nav-link" href="#activities">
                           Activities
@@ -278,11 +569,8 @@ const ContactCard = () => {
                     </ul>
 
                     {/* Search Bar and Filters */}
-
                   </div>
-
                 </div>
-
 
                 <div>
                   <h6 className="text-secondary mb-3">December 2024</h6>
@@ -292,16 +580,26 @@ const ContactCard = () => {
                       className="p-3 mb-2 border rounded"
                       style={{ backgroundColor: "#f9f9f9" }}
                     >
-                      <p className="mb-1 text-muted" style={{ fontSize: "0.9rem" }}>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "0.9rem" }}
+                      >
                         {activity.date}
                       </p>
                       <p className="mb-1" style={{ fontWeight: "bold" }}>
                         {activity.user}
                       </p>
                       <p className="mb-1">
-                        {activity.action} <span style={{ fontWeight: "bold" }}>{activity.status}</span>
+                        {activity.action}{" "}
+                        <span style={{ fontWeight: "bold" }}>
+                          {activity.status}
+                        </span>
                       </p>
-                      <a href="#view-details" className="text-primary" style={{ fontSize: "0.9rem" }}>
+                      <a
+                        href="#view-details"
+                        className="text-primary"
+                        style={{ fontSize: "0.9rem" }}
+                      >
                         View details
                       </a>
                     </div>
@@ -311,190 +609,33 @@ const ContactCard = () => {
             </div>
           </div>
         </div>
-        {/* Additional Sidebar */}
-        <div className="col-lg-3 col-md-4 col-sm-12 mb-4">
-          <div className="card shadow-sm h-100">
-            <div className="sidebar-menu p-3">
-              <div className="menu-item" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Account Overview
-                </span>
-              </div>
-              <div className="menu-item d-flex justify-content-between" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Companies (0)
-                </span>
-                <a href="#" className="text-info">
-                  + Add
-                </a>
-              </div>
-              <div className="menu-item d-flex justify-content-between" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Contacts (1)
-                </span>
-                <a href="#" className="text-info">
-                  + Add
-                </a>
-              </div>
-              <div className="menu-item d-flex justify-content-between" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Leads (0)
-                </span>
-                <a href="#" className="text-secondary fw-bold">
-                  + Add
-                </a>
-              </div>
-              <div className="menu-item d-flex justify-content-between" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Deals (0)
-                </span>
-                <a href="#" className="text-info fw-bold">
-                  + Add
-                </a>
-              </div>
-              <div className="menu-item d-flex justify-content-between" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Tickets (2)
-                </span>
-                <a href="#" className="text-info fw-bold">
-                  + Add
-                </a>
-              </div>
-              <div className="menu-item d-flex justify-content-between">
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Invoices (0)
-                </span>
-                <a href="#" className="text-info" />
-                <div className="dropdown">
-                  <a href="#" className="text-info">
-                    <button
-                      className="btn text-info fw-bold dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton1"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Add
-                    </button>
-                  </a>
-                  <ul
-                    className="dropdown-menu "
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <a href="#" className="text-info"></a>
-                    <li>
-                      <a href="#" className="text-info" />
-                      <a className="dropdown-item" href="#">
-                        Action
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Another action
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Something else here
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="menu-item" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />
-                  Health Score
-                </span>
-              </div>
-              <div className="menu-item" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />
-                  Lead Score
-                </span>
-              </div>
-              <div className="menu-item d-flex justify-content-between" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Payments (0)
-                </span>
-                <a href="#" className="text-info fw-bold">
-                  + Add
-                </a>
-              </div>
-              <div className="menu-item d-flex justify-content-between" style={{borderBottom:"1px solid grey"}}>
-                <span>
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Attachments{" "}
-                </span>
-                <a href="#" className="text-info" />
-                <div className="dropdown" >
-                  <a href="#" className="text-info">
-                    <button
-                      className="btn text-info fw-bold dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton1"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Add
-                    </button>
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <a href="#" className="text-info"></a>
-                    <li>
-                      <a href="#" className="text-info" />
-                      <a className="dropdown-item" href="#">
-                        Action
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Another action
-                      </a>
-                    </li>
-                    
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Something else here
-                      </a>
-                    </li>
-                    </ul>
-                
-                </div>
-              </div>
-                
-                <div className="menu-item" style={{borderBottom:"1px solid grey"}}>
-                <span >
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Portant-Documents Automation (1)
-                </span>
-                
-              </div>
-              <div className="menu-item" style={{borderBottom:"1px solid grey"}}>
-                <span >
-                  <i className="fa-solid fa-chevron-right fs-6 text-info me-3 p-2" />{" "}
-                  Portant | Latest Document
-                </span>
-                
-              </div>
-            </div>
-          </div>
+
+        <div className=" col-md-3 bg-white shadow p-3 ">
+          <Accordion defaultActiveKey="0">
+            {menuItems.map((item, index) => (
+              <Accordion.Item eventKey={index.toString()} key={index}>
+                <Accordion.Header>
+                  <div className="d-flex align-items-center w-100 justify-content-between">
+                    <div className="d-flex align-items-center">
+                      <FaChevronRight
+                        className="me-2"
+                        style={{ color: "blue" }}
+                      />
+                      {item.title}
+                    </div>
+                    <Button variant="link" className="p-0 text-info">
+                      + Add
+                    </Button>
+                  </div>
+                </Accordion.Header>
+                <Accordion.Body>{item.content}</Accordion.Body>
+              </Accordion.Item>
+            ))}
+          </Accordion>
         </div>
       </div>
     </div>
-
-  )
-}
+  );
+};
 
 export default ContactCard;

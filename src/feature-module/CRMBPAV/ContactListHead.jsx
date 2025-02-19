@@ -159,10 +159,10 @@ const ContactListHead = () => {
        <Row className="mt-4 text-center">
               {[
                 { title: "TOTAL NUMBER OF CONTACT", value: "14", detail: "" },
-                { title: "quick analysis points", value: "", detail: "" },
+                { title: "NOT CONTACTED", value: "", detail: "15" },
                 { title: "NEW CONTACT THIS MONTH", value: "10", detail: "" },
-                { title: "HIGH-LEVEL INFORMATION", value: "", detail: "" },
-                { title: "CONTACTED", value: "", detail: "" },
+                { title: "NEW RECURRING CONTECT", value: "5", detail: "" },
+                { title: "CONTACTED", value: "", detail: "12" },
                
               ].map((item, index) => (
                 <Col key={index}>

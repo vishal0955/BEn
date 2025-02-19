@@ -11,6 +11,18 @@ const DealsCard = () => {
   // Define custom primary color
   const primaryColor = "#2da3bb";
 
+  const menuItems = [
+    { title: "Contacts", content: "Manage all your contacts in one place." },
+    { title: "Companies", content: "View and manage company details." },
+    { title: "Leads", content: "Track potential clients and leads." },
+    { title: "Deals", content: "Manage your sales pipeline efficiently." },
+    { title: "Tickets", content: "Handle customer support tickets." },
+    { title: "Invoices", content: "Generate and track invoices easily." },
+    { title: "Health Score", content: "Monitor customer health scores." },
+    { title: "Lead Score", content: "Evaluate and rank potential leads." },
+    { title: "Attachments", content: "Store and manage important files." },
+  ];
+
   return (
     <div className='page-wrapper'>
     <Container fluid style={{ backgroundColor: "#f5f9fb", minHeight: "100vh", padding: "20px" }}>
@@ -144,9 +156,9 @@ const DealsCard = () => {
               </div>
             </Tab>
 
-            <Tab eventKey="intelligence" title="Intelligence">
+            <Tab eventKey="intelligence" title="AI">
               <div className="p-3 bg-light border rounded">
-                <p>Intelligence content goes here.</p>
+                <p>AI content goes here.</p>
               </div>
             </Tab>
           </Tabs>
@@ -154,31 +166,31 @@ const DealsCard = () => {
 
         {/* Right Sidebar */}
         <Col md={3} className="bg-white p-3 shadow-sm">
-          {[
-            "Contacts",
-            "Companies",
-            "Leads",
-            "Deals",
-            "Tickets",
-            "Invoices",
-            "Health Score",
-            "Lead Score",
-            "Attachments",
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="d-flex justify-content-between align-items-center py-2 border-bottom"
-            >
-              <span>
-                <FaChevronRight className="me-2" style={{ color: primaryColor }} />
-                {item}
-              </span>
-              <Button variant="link" className="p-0" style={{ color: primaryColor }}>
-                + Add
-              </Button>
-            </div>
-          ))}
-        </Col>
+      <Accordion defaultActiveKey="0">
+        {menuItems.map((item, index) => (
+          <Accordion.Item eventKey={index.toString()} key={index}>
+            {/* Custom Header (Without Dropdown Arrow) */}
+            <Accordion.Header className="w-100">
+              <div className="d-flex align-items-center w-100 justify-content-between">
+                <div className="d-flex align-items-center">
+                  <FaChevronRight className="me-2" style={{ color: primaryColor }} />
+                  {item.title}
+                </div>
+                <Button variant="link" className="p-0" style={{ color: primaryColor }}>
+                  + Add
+                </Button>
+              </div>
+            </Accordion.Header>
+
+            {/* Accordion Body */}
+            <Accordion.Body>
+              <p>{item.content}</p>
+            </Accordion.Body>
+          </Accordion.Item>
+        ))}
+      </Accordion>
+    </Col>
+
       </Row>
     </Container>
     </div>

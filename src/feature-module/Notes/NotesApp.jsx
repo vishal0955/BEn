@@ -1,7 +1,17 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
+import { all_routes } from "../router/all_routes";
+
+// import { routes } from "../../core/common/selectoption/selectoption";
+// import { routes } from "../../core/common/collapse-header/collapse-header";
+// import { routes } from "../../core/common/collapse-header/collapse-header"
+import CollapseHeader from "../../core/common/collapse-header/collapse-header";
+
+
 
 const NotesApp = () => {
+  const  routes = all_routes
   const [showModal, setShowModal] = useState(false); // Modal visibility state
   const [currentNote, setCurrentNote] = useState(null); // Currently selected note
   const [noteContent, setNoteContent] = useState(""); // Editable content of the note
@@ -72,10 +82,100 @@ const NotesApp = () => {
 
   return (  
     <div className="page-wrapper">
+        
     <div
       className="container-fluid bg-light text-dark py-4"
       style={{ minHeight: "100vh" }}
     >
+       <div className="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-2">
+              <div className="my-auto mb-2">
+             
+                <nav>
+                  <ol className="breadcrumb mb-0">
+                    <li className="breadcrumb-item">
+                      <Link to={routes.adminDashboard}>
+                        <i className="ti ti-smart-home" />
+                      </Link>
+                    </li>
+                    <li className="breadcrumb-item">Application</li>
+                    <li className="breadcrumb-item active" aria-current="page">
+                      Notes
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+              <div className="d-flex my-xl-auto right-content align-items-center flex-wrap grid gap-3">
+              <div className="">
+                  <div className="input-icon-start position-relative">
+                    <span className="input-icon-addon">
+                      <i className="ti ti-search" />
+                    </span>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search Todo List"
+                    />
+                  </div>
+                </div>
+                  <div className="d-flex align-items-center border rounded p-1 me-2">                    
+                                  <Link to={all_routes.notesapp} className="btn btn-icon btn-sm">
+                                    <i className="ti ti-list-tree" />
+                                  </Link>
+                                  <Link
+                                    to={all_routes.notes}
+                                    className="btn btn-icon btn-sm active bg-primary text-white"
+                                  >
+                                    <i className="ti ti-table" />
+                                  </Link>
+                                </div>
+                <div className=" ">
+                  <div className="dropdown">
+                    <Link
+                      to="#"
+                      className="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                      data-bs-toggle="dropdown"
+                    >
+                      <i className="ti ti-file-export me-2" />
+                      Export
+                    </Link>
+                    <ul className="dropdown-menu  dropdown-menu-end p-3">
+                      <li>
+                        <Link
+                          to="#"
+                          className="dropdown-item rounded-1"
+                        >
+                          <i className="ti ti-file-type-pdf me-1" />
+                          Export as PDF
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="#"
+                          className="dropdown-item rounded-1"
+                        >
+                          <i className="ti ti-file-type-xls me-1" />
+                          Export as Excel{" "}
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                {/* <div className="">
+                  <Link
+                    to=""
+                    className="btn btn-primary d-flex align-items-center"
+                    data-bs-toggle="modal" data-inert={true}
+                    data-bs-target="#add_note"
+                  >
+                    <i className="ti ti-circle-plus me-2" />
+                    Add Notes
+                  </Link>
+                </div> */}
+                <div className="ms-2 head-icons">
+                  <CollapseHeader />
+                </div>
+              </div>
+            </div>
       {/* Header */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h4 className="fw-bold">Everything</h4>

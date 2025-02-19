@@ -30,7 +30,7 @@ const DealsKanban = () => {
           <Button variant="danger">Create deal</Button>
         </div>
       </div>
-      <div className=" d-flex mb-4  flex-wrap  ">
+      {/* <div className=" d-flex mb-4  flex-wrap  ">
           {tabs.map((tab, index) => (
             <div
               key={index}
@@ -79,7 +79,7 @@ const DealsKanban = () => {
               All views
             </button>
           </div>
-        </div>
+        </div> */}
 
 
       {/* Filters Section */}
@@ -115,7 +115,7 @@ const DealsKanban = () => {
       </div>
 
       {/* Insights Section */}
-      <Row className="mt-4 text-center">
+      <Row className="mt-4 text-center" >
         {[
           { title: "TOTAL DEAL AMOUNT", value: "£1.18M", detail: "Average per deal: £4.09K" },
           { title: "WEIGHTED DEAL AMOUNT", value: "£616.62K", detail: "Average per deal: £2.13K" },
@@ -130,9 +130,10 @@ const DealsKanban = () => {
             {item.detail && <p>{item.detail}</p>}
           </Col>
         ))}
+      
       </Row>
        {/* Table Section */}
-      <div className="overflow-auto pt-4" style={{ whiteSpace: "nowrap" }}>
+      <div className="overflow-auto pt-4 mt-2" style={{ whiteSpace: "nowrap" }}>
         <Table bordered className="text-center">
           <thead className="bg-light">
             <tr>
@@ -141,6 +142,8 @@ const DealsKanban = () => {
               <th>Meeting Scheduled</th>
               <th>Quoting</th>
               <th>Quoted</th>
+              <th>Closed One</th>
+              <th>Closed Lost</th>
             </tr>
           </thead>
           <tbody>
@@ -163,10 +166,14 @@ const DealsKanban = () => {
               <td>No activity</td>
               <td>No activity</td>
               <td>No activity</td>
+              <td>No activity </td>
+              <td>No activity </td>
             </tr>
           </tbody>
           <tfoot className="bg-light">
             <tr>
+              <td>Total: £0</td>
+              <td>Total: £0</td>
               <td>Total: £0</td>
               <td>Total: £0</td>
               <td>Total: £0</td>

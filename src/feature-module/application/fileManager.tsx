@@ -117,7 +117,7 @@ const FileManager = () => {
           {/* Breadcrumb */}
           <div className="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3">
             <div className="my-auto mb-2">
-              <h2 className="mb-1">File Manager</h2>
+              {/* <h2 className="mb-1">File Manager</h2> */}
               <nav>
                 <ol className="breadcrumb mb-0">
                   <li className="breadcrumb-item">
@@ -208,14 +208,27 @@ const FileManager = () => {
                   <i className="ti ti-circle-plus me-2" />
                   Create Folder
                 </Link>
+       
+              </div>
+              <div className="mb-2">
+              <Link
+                  to="#"
+                  data-bs-target="#add_folder"
+                  className="btn btn-primary d-flex align-items-center"
+                >
+                        <i className="ti ti-upload fs-16" />
+                    
+                  
+                </Link>
+       
               </div>
               <div className="ms-2 head-icons">
                 <CollapseHeader />
               </div>
             </div>
           </div>
-          <div className="row">
-            {/* Dropbox */}
+          {/* <div className="row">
+          
             <div className="col-lg-3 col-md-6 d-flex">
               <div className="card bg-lightdanger-gradient flex-fill">
                 <div className="card-body">
@@ -280,8 +293,7 @@ const FileManager = () => {
                 </div>
               </div>
             </div>
-            {/* /Dropbox */}
-            {/* Google Drive */}
+         
             <div className="col-lg-3 col-md-6 d-flex">
               <div className="card bg-lightpink-gradient flex-fill">
                 <div className="card-body">
@@ -346,8 +358,7 @@ const FileManager = () => {
                 </div>
               </div>
             </div>
-            {/* /Google Drive */}
-            {/* Cloud Storage */}
+    
             <div className="col-lg-3 col-md-6 d-flex">
               <div className="card bg-lightsuccess-gradient flex-fill">
                 <div className="card-body">
@@ -412,8 +423,7 @@ const FileManager = () => {
                 </div>
               </div>
             </div>
-            {/* /Cloud Storage */}
-            {/* Internal Storage */}
+          
             <div className="col-lg-3 col-md-6 d-flex">
               <div className="card bg-lightpurple-gradient flex-fill">
                 <div className="card-body">
@@ -478,8 +488,8 @@ const FileManager = () => {
                 </div>
               </div>
             </div>
-            {/* /Internal Storage */}
-          </div>
+    
+          </div> */}
           <div className="row">
             {/* Sidebar */}
             <div className="col-xl-3  theiaStickySidebar">
@@ -523,17 +533,7 @@ const FileManager = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="file-drop mb-3 text-center">
-                      <span className="avatar avatar-sm bg-primary text-white mb-2">
-                        <i className="ti ti-upload fs-16" />
-                      </span>
-                      <h6 className="mb-2">Drop files here</h6>
-                      <p className="fs-12 mb-0">
-                        Browse and chose the files you want to upload from your
-                        computer
-                      </p>
-                      <input type="file" />
-                    </div>
+                   
                     <div className="files-list nav d-block">
                       <Link
                         to="javscript:void(0);"
@@ -542,13 +542,13 @@ const FileManager = () => {
                         <i className="ti ti-folder-up me-2" />
                         All Folder / Files
                       </Link>
-                      <Link
+                      {/* <Link
                         to="javscript:void(0);"
                         className="d-flex align-items-center fw-medium p-2"
                       >
                         <i className="ti ti-star me-2" />
                         Drive
-                      </Link>
+                      </Link> */}
                       <Link
                         to="javscript:void(0);"
                         className="d-flex align-items-center fw-medium p-2"
@@ -582,15 +582,15 @@ const FileManager = () => {
                         className="d-flex align-items-center fw-medium p-2"
                       >
                         <i className="ti ti-star me-2" />
-                        Important
+                        starred
                       </Link>
-                      <Link
+                      {/* <Link
                         to="javscript:void(0);"
                         className="d-flex align-items-center fw-medium p-2"
                       >
                         <i className="ti ti-music me-2" />
                         Media
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                 </div>
@@ -695,913 +695,10 @@ const FileManager = () => {
             {/* /Sidebar */}
             <div className="col-xl-9">
               {/* Quick Access */}
-              <div className="border-bottom mb-4">
-                <div className="d-flex align-items-center justify-content-between mb-2">
-                  <h4 className="mb-2">Quick Access</h4>
-                  <div>
-                    <Link
-                      to="#"
-                      className="mb-2 me-3 fw-medium link-default"
-                    >
-                      Close
-                    </Link>
-                    <Link
-                      to="#"
-                      className="mb-2 fw-medium link-default"
-                    >
-                      View All
-                    </Link>
-                  </div>
-                </div>
-                <div className="row row-cols-xxl-5 row-cols-xl-3 row-cols-sm-3 row-cols-1 justify-content-center">
-                  <div className="col d-flex">
-                    <div className="card access-wrap border-0 flex-fill">
-                      <div className="card-body text-center">
-                        <ImageWithBasePath
-                          src="assets/img/icons/file.svg"
-                          alt="img"
-                          className="mb-3"
-                        />
-                        <h6 className="mb-2 fw-medium">
-                          <Link
-                            to="#"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#preview"
-                          >
-                            Final Change.doc
-                          </Link>
-                        </h6>
-                        <span className="badge badge-dark-transparent">2.4 GB</span>
-                      </div>
-                      <span className="access-rate rating-select">
-                        <i className="ti ti-star-filled filled" />
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col d-flex">
-                    <div className="card access-wrap border-0 flex-fill">
-                      <div className="card-body text-center">
-                        <ImageWithBasePath
-                          src="assets/img/icons/pdf-icon.svg"
-                          alt="img"
-                          className="mb-3"
-                        />
-                        <h6 className="mb-2 fw-medium">
-                          <Link
-                            to="#"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#preview"
-                          >
-                            Marklist.pdf
-                          </Link>
-                        </h6>
-                        <span className="badge badge-dark-transparent">2.4 GB</span>
-                      </div>
-                      <span className="access-rate rating-select">
-                        <i className="ti ti-star" />
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col d-flex">
-                    <div className="card access-wrap border-0 flex-fill">
-                      <div className="card-body text-center">
-                        <ImageWithBasePath
-                          src="assets/img/icons/image.svg"
-                          alt="img"
-                          className="mb-3"
-                        />
-                        <h6 className="mb-2 fw-medium">
-                          <Link
-                            to="#"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#preview"
-                          >
-                            Nature.png
-                          </Link>
-                        </h6>
-                        <span className="badge badge-dark-transparent">2.4 GB</span>
-                      </div>
-                      <span className="access-rate rating-select">
-                        <i className="ti ti-star-filled filled" />
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col d-flex">
-                    <div className="card access-wrap border-0 flex-fill">
-                      <div className="card-body text-center">
-                        <ImageWithBasePath
-                          src="assets/img/icons/xls-icon.svg"
-                          alt="img"
-                          className="mb-3"
-                        />
-                        <h6 className="mb-2 fw-medium">
-                          <Link
-                            to="#"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#preview"
-                          >
-                            List.xlsx
-                          </Link>
-                        </h6>
-                        <span className="badge badge-dark-transparent">2.4 GB</span>
-                      </div>
-                      <span className="access-rate rating-select">
-                        <i className="ti ti-star" />
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col d-flex">
-                    <div className="card access-wrap border-0 flex-fill">
-                      <div className="card-body text-center">
-                        <ImageWithBasePath
-                          src="assets/img/icons/folder-icon.svg"
-                          alt="img"
-                          className="mb-3"
-                        />
-                        <h6 className="mb-2 fw-medium">
-                          <Link
-                            to="#"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#preview"
-                          >
-                            Group Photos
-                          </Link>
-                        </h6>
-                        <span className="badge badge-dark-transparent">2.4 GB</span>
-                      </div>
-                      <span className="access-rate rating-select">
-                        <i className="ti ti-star" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+         
               {/* /Quick Access */}
               {/* Recent Videos */}
-              <div className="border-bottom mb-4">
-                <div className="d-flex align-items-center justify-content-between mb-2">
-                  <h4 className="mb-2">Recent Videos</h4>
-                  <div className="dropdown mb-2">
-                    <Link
-                      to="#"
-                      className="dropdown-toggle btn btn-white"
-                      data-bs-toggle="dropdown"
-                    >
-                      Last 7 Days
-                    </Link>
-                    <ul className="dropdown-menu  dropdown-menu-end p-3">
-                      <li>
-                        <Link
-                          to="#"
-                          className="dropdown-item rounded-1"
-                        >
-                          Last 7 Days
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="#"
-                          className="dropdown-item rounded-1"
-                        >
-                          Last 1 month
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="#"
-                          className="dropdown-item rounded-1"
-                        >
-                          Last 1 year
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <Slider {...video} className="owl-carousel video-section">
-                  <div className="video-wrap">
-                    <video
-                      width={100}
-                      height={100}
-                      className="js-player"
-                      crossOrigin=""
-                      playsInline
-                      controls
-                      poster="assets/img/file-manager/video-01.jpg"
-                    >
-                      <source
-                        src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                    <div className="d-flex align-items-center justify-content-between video-content">
-                      <h6 className="fw-medium">
-                        <Link
-                          to="#"
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#preview"
-                        >
-                          Inertia Movie
-                        </Link>
-                      </h6>
-                      <div className="d-flex align-items-center">
-                        <Link to="#" className="rating-select">
-                          <i className="ti ti-star-filled filled" />
-                        </Link>
-                        <div className="dropdown ms-2">
-                          <Link
-                            to="#"
-                            className="d-inline-flex align-items-center"
-                            data-bs-toggle="dropdown"
-                          >
-                            <i className="ti ti-dots" />
-                          </Link>
-                          <ul className="dropdown-menu dropdown-menu-end p-3">
-                            <li>
-                              <Link
-                                to="#"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#preview"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-folder-open me-2" />
-                                Preview
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-copy me-2" />
-                                Duplicate
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-arrow-left-right me-2" />
-                                Move
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-user-plus me-2" />
-                                Invite
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-share-3 me-2" />
-                                Share Link
-                              </Link>
-                            </li>
-                            <li>
-                              <hr className="dropdown-divider my-2" />
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-eye me-2" />
-                                View Details
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-download me-2" />
-                                Download
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-trash-x me-2" />
-                                Delete
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="video-wrap">
-                    <video
-                      width={100}
-                      height={100}
-                      className="js-player"
-                      crossOrigin=""
-                      playsInline
-                      controls
-                      poster="assets/img/file-manager/video-02.jpg"
-                    >
-                      <source
-                        src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                    <div className="d-flex align-items-center justify-content-between video-content">
-                      <h6 className="fw-medium">
-                        <Link
-                          to="#"
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#preview"
-                        >
-                          2028/11/10.mp4
-                        </Link>
-                      </h6>
-                      <div className="d-flex align-items-center">
-                        <Link to="#" className="rating-select">
-                          <i className="ti ti-star-filled filled" />
-                        </Link>
-                        <div className="dropdown ms-2">
-                          <Link
-                            to="#"
-                            className="d-inline-flex align-items-center"
-                            data-bs-toggle="dropdown"
-                          >
-                            <i className="ti ti-dots" />
-                          </Link>
-                          <ul className="dropdown-menu dropdown-menu-end p-3">
-                            <li>
-                              <Link
-                                to="#"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#preview"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-folder-open me-2" />
-                                Preview
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-copy me-2" />
-                                Duplicate
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-arrow-left-right me-2" />
-                                Move
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-user-plus me-2" />
-                                Invite
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-share-3 me-2" />
-                                Share Link
-                              </Link>
-                            </li>
-                            <li>
-                              <hr className="dropdown-divider my-2" />
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-eye me-2" />
-                                View Details
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-download me-2" />
-                                Download
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-trash-x me-2" />
-                                Delete
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="video-wrap">
-                    <video
-                      width={100}
-                      height={100}
-                      className="js-player"
-                      crossOrigin=""
-                      playsInline
-                      controls
-                      poster="assets/img/file-manager/video-03.jpg"
-                    >
-                      <source
-                        src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                    {/* <div className="plyr__poster" style={{backgroundImage: `url('assets/img/file-manager/video-03.jpg')`}}></div> */}
-                    <div className="d-flex align-items-center justify-content-between video-content">
-                      <h6 className="fw-medium">
-                        <Link
-                          to="#"
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#preview"
-                        >
-                          AI Liquid Color
-                        </Link>
-                      </h6>
-                      <div className="d-flex align-items-center">
-                        <Link to="#" className="rating-select">
-                          <i className="ti ti-star-filled filled" />
-                        </Link>
-                        <div className="dropdown ms-2">
-                          <Link
-                            to="#"
-                            className="d-inline-flex align-items-center"
-                            data-bs-toggle="dropdown"
-                          >
-                            <i className="ti ti-dots" />
-                          </Link>
-                          <ul className="dropdown-menu dropdown-menu-end p-3">
-                            <li>
-                              <Link
-                                to="#"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#preview"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-folder-open me-2" />
-                                Preview
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-copy me-2" />
-                                Duplicate
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-arrow-left-right me-2" />
-                                Move
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-user-plus me-2" />
-                                Invite
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-share-3 me-2" />
-                                Share Link
-                              </Link>
-                            </li>
-                            <li>
-                              <hr className="dropdown-divider my-2" />
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-eye me-2" />
-                                View Details
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-download me-2" />
-                                Download
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-trash-x me-2" />
-                                Delete
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="video-wrap">
-                    <video
-                      width={100}
-                      height={100}
-                      className="js-player"
-                      crossOrigin=""
-                      playsInline
-                      controls
-                      poster="assets/img/file-manager/video-01.jpg"
-                    >
-                      <source
-                        src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                    <div className="d-flex align-items-center justify-content-between video-content">
-                      <h6 className="fw-medium">
-                        <Link
-                          to="#"
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#preview"
-                        >
-                          Inertia Movie
-                        </Link>
-                      </h6>
-                      <div className="d-flex align-items-center">
-                        <Link to="#" className="rating-select">
-                          <i className="ti ti-star-filled filled" />
-                        </Link>
-                        <div className="dropdown ms-2">
-                          <Link
-                            to="#"
-                            className="d-inline-flex align-items-center"
-                            data-bs-toggle="dropdown"
-                          >
-                            <i className="ti ti-dots" />
-                          </Link>
-                          <ul className="dropdown-menu dropdown-menu-end p-3">
-                            <li>
-                              <Link
-                                to="#"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#preview"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-folder-open me-2" />
-                                Preview
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-copy me-2" />
-                                Duplicate
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-arrow-left-right me-2" />
-                                Move
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-user-plus me-2" />
-                                Invite
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-share-3 me-2" />
-                                Share Link
-                              </Link>
-                            </li>
-                            <li>
-                              <hr className="dropdown-divider my-2" />
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-eye me-2" />
-                                View Details
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-download me-2" />
-                                Download
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-trash-x me-2" />
-                                Delete
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="video-wrap">
-                    <video
-                      width={100}
-                      height={100}
-                      className="js-player"
-                      crossOrigin=""
-                      playsInline
-                      controls
-                      poster="assets/img/file-manager/video-02.jpg"
-                    >
-                      <source
-                        src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                    <div className="d-flex align-items-center justify-content-between video-content">
-                      <h6 className="fw-medium">
-                        <Link
-                          to="#"
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#preview"
-                        >
-                          2028/11/10.mp4
-                        </Link>
-                      </h6>
-                      <div className="d-flex align-items-center">
-                        <Link to="#" className="rating-select">
-                          <i className="ti ti-star-filled filled" />
-                        </Link>
-                        <div className="dropdown ms-2">
-                          <Link
-                            to="#"
-                            className="d-inline-flex align-items-center"
-                            data-bs-toggle="dropdown"
-                          >
-                            <i className="ti ti-dots" />
-                          </Link>
-                          <ul className="dropdown-menu dropdown-menu-end p-3">
-                            <li>
-                              <Link
-                                to="#"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#preview"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-folder-open me-2" />
-                                Preview
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-copy me-2" />
-                                Duplicate
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-arrow-left-right me-2" />
-                                Move
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-user-plus me-2" />
-                                Invite
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-share-3 me-2" />
-                                Share Link
-                              </Link>
-                            </li>
-                            <li>
-                              <hr className="dropdown-divider my-2" />
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-eye me-2" />
-                                View Details
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-download me-2" />
-                                Download
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-trash-x me-2" />
-                                Delete
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="video-wrap">
-                    <video
-                      width={100}
-                      height={100}
-                      className="js-player"
-                      crossOrigin=""
-                      playsInline
-                      controls
-                      poster="assets/img/file-manager/video-03.jpg"
-                    >
-                      <source
-                        src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                    {/* <div className="plyr__poster" style={{backgroundImage: `url('assets/img/file-manager/video-03.jpg')`}}></div> */}
-                    <div className="d-flex align-items-center justify-content-between video-content">
-                      <h6 className="fw-medium">
-                        <Link
-                          to="#"
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#preview"
-                        >
-                          AI Liquid Color
-                        </Link>
-                      </h6>
-                      <div className="d-flex align-items-center">
-                        <Link to="#" className="rating-select">
-                          <i className="ti ti-star-filled filled" />
-                        </Link>
-                        <div className="dropdown ms-2">
-                          <Link
-                            to="#"
-                            className="d-inline-flex align-items-center"
-                            data-bs-toggle="dropdown"
-                          >
-                            <i className="ti ti-dots" />
-                          </Link>
-                          <ul className="dropdown-menu dropdown-menu-end p-3">
-                            <li>
-                              <Link
-                                to="#"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#preview"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-folder-open me-2" />
-                                Preview
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-copy me-2" />
-                                Duplicate
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-arrow-left-right me-2" />
-                                Move
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-user-plus me-2" />
-                                Invite
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-share-3 me-2" />
-                                Share Link
-                              </Link>
-                            </li>
-                            <li>
-                              <hr className="dropdown-divider my-2" />
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-eye me-2" />
-                                View Details
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-download me-2" />
-                                Download
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="#"
-                                className="dropdown-item rounded-1"
-                              >
-                                <i className="ti ti-trash-x me-2" />
-                                Delete
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Slider>
-              </div>
+        
               {/* /Recent Videos */}
               {/* Recent Folders */}
               <div className="border-bottom mb-4">
@@ -3183,7 +2280,7 @@ const FileManager = () => {
           </div>
         </div>
         <div className="footer d-sm-flex align-items-center justify-content-between border-top bg-white p-3">
-          <p className="mb-0">2014 - 2025 © SmartHR.</p>
+          <p className="mb-0">2014 - 2025 © BPAV</p>
           <p>
             Designed &amp; Developed By{" "}
             <Link to="#" className="text-primary">

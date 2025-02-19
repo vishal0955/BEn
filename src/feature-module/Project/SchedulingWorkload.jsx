@@ -124,9 +124,8 @@ const SchedulingWorkload = () => {
       <Row className="mb-3">
         <Col><h4>Creative Team Current Work</h4></Col>
         <Col className="text-end">
-          <Button variant="outline-secondary" className="me-2">Expand All</Button>
-          <Button variant="outline-secondary" className="me-2">Collapse All</Button>
-          <Button variant="outline-secondary" className="me-2">Backlog Box</Button>
+          <Button variant="outline-secondary" className="me-2">Assign Member</Button>
+          <Button variant="outline-secondary" className="me-2">Create Project</Button>
           <Button variant="outline-secondary">Leave Feedback</Button>
         </Col>
       </Row>

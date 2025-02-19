@@ -30,7 +30,7 @@ const Todo = () => {
         <div className="page-wrapper">
           <div className="content">
             {/* Breadcrumb */}
-            <div className="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3">
+            <div className="d-md-flex d-block align-items-center justify-content-between page-breadcrumb">
              
           
                 <nav>
@@ -48,8 +48,8 @@ const Todo = () => {
                 </nav>
           
            
-              <div className="d-flex my-xl-auto right-content align-items-center flex-wrap ">
-              <div className="mb-3">
+              <div className="d-flex my-xl-auto right-content align-items-center flex-wrap grid gap-3 ">
+              <div className="">
                   <Link to={all_routes.addtask} >
                   <button
                     className="btn btn-primary"
@@ -95,7 +95,7 @@ const Todo = () => {
                 </div>
               </div>
             </div>
-            <div className="card">
+            <div className="card mt-2">
               <div className="card-body">
                 <div className="row gy-3 mb-3">
                   <div className="col-sm-4">

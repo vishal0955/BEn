@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { all_routes } from "../../router/all_routes";
 type PasswordField = "password";
 
+
 const Login = () => {
   const routes = all_routes;
   const navigation = useNavigate();
@@ -127,13 +128,33 @@ const Login = () => {
                       </div>
                       <div className="mb-3">
                       <button
-                          onClick={navigationPath}
+                          onClick={() => navigation(all_routes.homedashboard)}
                           type="submit"
                           className="btn btn-primary w-100"
                         >
-                          Sign In
+                          Log In
                         </button>
+                        
+
                       </div>
+
+                      <div className="mb-3">
+                        <div className="d-flex justify-content-between">
+                          <button  className="btn btn-primary w-48 me-2"
+                           onClick={() => navigation(all_routes.superadmin)}
+                            >
+                              Super Admin
+                            </button>
+                            <button  className="btn btn-primary w-48 me-2"
+                           onClick={() => navigation(all_routes.homedashboard)}
+                            >
+                               Admin
+                            </button>
+                        </div>
+                      </div>
+
+
+
                       <div className="text-center">
                         <h6 className="fw-normal text-dark mb-0">
                           Don’t have an account?
@@ -188,7 +209,7 @@ const Login = () => {
                       </div>
                     </div>
                     <div className="mt-5 pb-4 text-center">
-                      <p className="mb-0 text-gray-9">Copyright © 2024 -  Job Portal</p>
+                    
                     </div>
                   </div>
                 </form>

@@ -104,7 +104,7 @@ const AllProjectCalendar = () => {
       </Container>
 
       {/* Modal to show AddTask component */}
-      <Modal show={showModal} onHide={() => setShowModal(false)} size="lg">
+      <Modal show={showModal} onHide={() => setShowModal(false)} size="xl">
         <Modal.Header closeButton>
           <Modal.Title>Add New Task</Modal.Title>
         </Modal.Header>

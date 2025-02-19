@@ -29,6 +29,13 @@ const Calendars = () => {
 
   // Function to add a new event
   const addEvent = (newEvent) => {
+    const eventWithColor = {
+      ...newEvent,
+      backgroundColor: selectedDate === "2025-02-18" ? "#009DC4" : "#33FF57",  // Color based on date or condition
+      borderColor: selectedDate === "2025-02-18" ? "#009DC4" : "#33FF57",  // Border color based on the same condition
+      color: "#FFFFFF", // Text color
+    };
+    
     setEvents([...events, newEvent]); // Add the new event to the existing list
     setShowAddTaskModal(false); // Close the modal after adding the event
   };
@@ -149,7 +156,7 @@ const Calendars = () => {
                       headerToolbar={{
                         start: "today,prev,next",
                         center: "title",
-                        end: "dayGridMonth,dayGridWeek,dayGridDay",
+                        end: "dayGridMonth,dayGridWeek,timeGridDay",
                       }}
                       events={events} // Provide events to FullCalendar
                       dateClick={handleDateClick} // Detecting clicks on dates

@@ -85,9 +85,9 @@ const ContactListHead = () => {
       {/* Header Section */}
       {selectedContact ? (
           <div>
-            <button className="btn btn-info mb-3" onClick={() => setSelectedContact(null)}>
+            {/* <button className="btn btn-info mb-3" onClick={() => setSelectedContact(null)}>
               ← Contacts
-            </button>
+            </button> */}
             <ContactCard company={selectedContact} />
           </div>
         ) : (
@@ -107,13 +107,13 @@ const ContactListHead = () => {
           </span>
         </div>
         <div className="header-actions d-flex align-items-center gap-3">
-          <a
+          {/* <a
             href="#"
             className="text-decoration-none"
             style={{ color: "#26a0fc", fontWeight: "500" }}
           >
             Data Quality
-          </a>
+          </a> */}
           <button
             className="btn btn-outline-secondary"
             style={{
@@ -127,7 +127,7 @@ const ContactListHead = () => {
           >
             Actions <i className="bi bi-chevron-down"></i>
           </button>
-          <button
+          {/* <button
             className="btn btn-outline-secondary"
             style={{
               color: "#26a0fc",
@@ -137,7 +137,7 @@ const ContactListHead = () => {
             }}
           >
             Import
-          </button>
+          </button> */}
           <button
             className="btn btn-create px-4"
             style={{
@@ -154,10 +154,28 @@ const ContactListHead = () => {
       </header>
 
       {/* Filter Tabs Section */}
-      <div className="filter-tabs">
+
+
+       <Row className="mt-4 text-center">
+              {[
+                { title: "TOTAL NUMBER OF CONTACT", value: "14", detail: "" },
+                { title: "NOT CONTACTED", value: "", detail: "15" },
+                { title: "NEW CONTACT THIS MONTH", value: "10", detail: "" },
+                { title: "NEW RECURRING CONTECT", value: "5", detail: "" },
+                { title: "CONTACTED", value: "", detail: "12" },
+               
+              ].map((item, index) => (
+                <Col key={index}>
+                  <h5 className="fw-bold">{item.title}</h5>
+                  <h3 className="text-primary">{item.value}</h3>
+                  {item.detail && <p>{item.detail}</p>}
+                </Col>
+              ))}
+            </Row>
+      <div className="row">
         {/* Tabs */}
         <div className=" d-flex mb-4  flex-wrap ">
-          {tabs.map((tab, index) => (
+          {/* {tabs.map((tab, index) => (
             <div
               key={index}
               className={` py-2 ${
@@ -177,8 +195,8 @@ const ContactListHead = () => {
             >
               {tab}
             </div>
-          ))}
-          <div className="ms-auto  d-flex">
+          ))} */}
+          {/* <div className="ms-auto  d-flex">
             <button
               className="btn btn-a"
               style={{
@@ -203,7 +221,8 @@ const ContactListHead = () => {
             >
               All views
             </button>
-          </div>
+          </div> */}
+       
         </div>
 
         {/* Filters */}
@@ -219,7 +238,7 @@ const ContactListHead = () => {
           >
             Contact owner <i className="bi bi-chevron-down"></i>
           </button>
-          <button
+          {/* <button
             className="btn btn-outline-secondary"
             style={{
               fontWeight: "700",
@@ -228,7 +247,7 @@ const ContactListHead = () => {
             }}
           >
             Create date <i className="bi bi-chevron-down"></i>
-          </button>
+          </button> */}
           <button
             className="btn btn-outline-secondary"
             style={{
@@ -239,7 +258,7 @@ const ContactListHead = () => {
           >
             Last activity date <i className="bi bi-chevron-down"></i>
           </button>
-          <button
+          {/* <button
             className="btn btn-outline-secondary"
             style={{
               fontWeight: "700",
@@ -248,7 +267,7 @@ const ContactListHead = () => {
             }}
           >
             Lead status <i className="bi bi-chevron-down"></i>
-          </button>
+          </button> */}
           <button
             className="btn btn-outline-secondary"
             style={{

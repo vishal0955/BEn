@@ -10,6 +10,8 @@ import MembershipAddon from "../membership/membershipaddon";
 
 import ComingSoon from "../pages/comingSoon";
 import Login from "../auth/login/login";
+
+// import Login from "../Authentication/Login";
 import Register from "../auth/register/register";
 import TwoStepVerification from "../auth/twoStepVerification/twoStepVerification";
 import EmailVerification from "../auth/emailVerification/emailVerification";
@@ -405,7 +407,7 @@ export const publicRoutes = [
   {
     path: "/",
     name: "Root",
-    element: <Navigate to="/index" />,
+    element: <Navigate to="/login" />,
     route: Route,
   },
   {
@@ -2384,3 +2386,18 @@ export const authRoutes = [
  
   
 ];
+
+
+export const userRoutes = [
+  {
+    path: "/",
+    name: "Root",
+    element: <Navigate to="/" />,
+    route: Route,
+  },
+  {
+    path: routes.homedashboard,
+    element: <HomeDashboard />,
+    route: Route,
+  },
+]

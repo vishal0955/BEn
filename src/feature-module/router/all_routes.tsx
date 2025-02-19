@@ -15,6 +15,7 @@ export const all_routes = {
   // dashboard routes
   // home: "/index",
   // adminDashboard: "/index",
+  login: "/login",
   homedashboard:"/index",
   adminDashboard: "/admin",
   employeeDashboard: "/employee-dashboard",
@@ -184,7 +185,7 @@ export const all_routes = {
   termscondition: "/terms-condition",
 
   // auth routes routes
-  login: "/login",
+  // login: "/login",
   login2: "/login-2",
   login3: "/login-3",
   register: "/register",

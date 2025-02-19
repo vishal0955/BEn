@@ -401,6 +401,7 @@ import AttendanceAdmin from "../HRComponents/AttendanceAdmin";
 import DepartmentList from "../HRComponents/DepartmentList";
 import DesignationList from "../HRComponents/DesignationList";
 import ProjectOwner from "../Project/Tables/ProjectOwner";
+import Superadmin from "../Superadmin";
 
 const routes = all_routes;
 export const publicRoutes = [
@@ -420,11 +421,11 @@ export const publicRoutes = [
   //   element: <Home />,
   //   route: Route,
   // },
-  {
-    path: routes.employeeDashboard,
-    element: <EmployeeDashboard />,
-    route: Route,
-  },
+  // {
+  //   path: routes.employeeDashboard,
+  //   element: <EmployeeDashboard />,
+  //   route: Route,
+  // },
   {
     path: routes.leadsDashboard,
     element: <LeadsDasboard />,
@@ -2389,15 +2390,19 @@ export const authRoutes = [
 
 
 export const userRoutes = [
+ 
   {
-    path: "/",
-    name: "Root",
-    element: <Navigate to="/" />,
+      path: routes.superadmin,
+      element: <Superadmin />,
+  },
+  {
+    path: routes.employeeDashboard,
+    element: <HomeDashboard />,
     route: Route,
   },
   {
-    path: routes.homedashboard,
-    element: <HomeDashboard />,
+    path: routes.employeeDashboard,
+    element: <EmployeeDashboard />,
     route: Route,
   },
 ]

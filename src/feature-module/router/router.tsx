@@ -40,8 +40,8 @@ const ALLRoutes: React.FC = () => {
         <Route element={<UserLayout />}>
           {userRoutes.map((route, idx) => (
             <Route path={route.path} element={route.element} key={idx} />
-          ))}
-        
+          ))}  
+                
         </Route>
 
         <Route element={<AuthFeature />}>

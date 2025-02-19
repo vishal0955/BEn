@@ -22,6 +22,12 @@ export const all_routes = {
   leadsDashboard: "/leads-dashboard",
   dealsDashboard: "/deals-dashboard",
 
+
+  //user route 
+  superadmin: "/superadmin",
+  
+
+
   //Application routes
   chat: "/application/chat",
   voiceCall: "/application/voice-call",

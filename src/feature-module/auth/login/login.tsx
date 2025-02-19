@@ -141,9 +141,14 @@ const Login = () => {
                       <div className="mb-3">
                         <div className="d-flex justify-content-between">
                           <button  className="btn btn-primary w-48 me-2"
-                           onClick={() => navigation(all_routes.homedashboard)}
+                           onClick={() => navigation(all_routes.superadmin)}
                             >
                               Super Admin
+                            </button>
+                            <button  className="btn btn-primary w-48 me-2"
+                           onClick={() => navigation(all_routes.homedashboard)}
+                            >
+                               Admin
                             </button>
                         </div>
                       </div>

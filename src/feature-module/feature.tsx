@@ -95,7 +95,7 @@ const Feature = () => {
         ${mobileSidebar ? "slide-nav" : ""}`}
           >
             <Header />
-            <Sidebar />
+          <Sidebar />
             <HorizontalSidebar />
             <TwoColumnSidebar/>
             <StackedSidebar/>
@@ -110,7 +110,7 @@ const Feature = () => {
         ${mobileSidebar ? "slide-nav" : ""}`}
           >
             <Header />
-            <Sidebar />
+      <Sidebar />
             <HorizontalSidebar />
             <TwoColumnSidebar/>
             <StackedSidebar/>

@@ -11,6 +11,7 @@ import InventoryOrderList from "../Inventory/InventoryOrderList";
 import InventoryIndex from "../Inventory/InventoryIndex";
 import Inventory from "../Inventory/Inventory";
 import UserLayout from "../UserLayout";
+import SuperAdminDashboard from "../super-admin/dashboard";
 // import OrdersPage from "../Inventory/OrdersPage";
 
 const ALLRoutes: React.FC = () => {
@@ -37,12 +38,16 @@ const ALLRoutes: React.FC = () => {
           </Route>
         </Route>
 
-        <Route element={<UserLayout />}>
+        
+
+        {/* <Route  element={<UserLayout />}>
           {userRoutes.map((route, idx) => (
             <Route path={route.path} element={route.element} key={idx} />
           ))}  
+          
                 
-        </Route>
+
+        </Route> */}
 
         <Route element={<AuthFeature />}>
           {authRoutes.map((route, idx) => (

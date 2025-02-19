@@ -24,7 +24,7 @@ export const all_routes = {
 
 
   //user route 
-  superadmin: "/superadmin",
+  superadmin: "/super-admin",
   
 
 
@@ -81,7 +81,8 @@ export const all_routes = {
     hrdashboard: "/hrdashboard",
     hrmyprofile: "/hrmyprofile",
     performance: "/hr/performance",
-    recruitment: "/hr/recruitment",
+    recruitment: "/hr/recruitmentkanban",
+    candidatelist: "/hr/candidatelist",
     organization: "/hr/organization",
     roadmap: "/hr/roadmap",
     mygoals: "/hr/mygoals",

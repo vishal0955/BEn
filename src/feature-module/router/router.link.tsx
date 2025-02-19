@@ -210,7 +210,7 @@ import JobGrid from "../recruitment/jobs/jobgrid";
 import JobList from "../recruitment/joblist/joblist";
 import CandidateGrid from "../recruitment/candidates/candidategrid";
 import CandidateKanban from "../recruitment/candidates/candidatekanban";
-import CandidatesList from "../recruitment/candidates/candidatelist";
+// import CandidatesList from "../recruitment/candidates/candidatelist";
 import RefferalList from "../recruitment/refferal/refferallist";
 import ClienttGrid from "../projects/clinet/clienttgrid";
 import ClientList from "../projects/clinet/clientlist";
@@ -402,6 +402,7 @@ import DepartmentList from "../HRComponents/DepartmentList";
 import DesignationList from "../HRComponents/DesignationList";
 import ProjectOwner from "../Project/Tables/ProjectOwner";
 import Superadmin from "../Superadmin";
+import CandidatesList from "../HRComponents/recruitment/candidatelist";
 
 const routes = all_routes;
 export const publicRoutes = [
@@ -609,6 +610,12 @@ export const publicRoutes = [
     element: <Recruitment />,
     route: Route,
   },
+  {
+    path: routes.candidatelist,
+    element: <CandidatesList />,
+    route: Route,
+  },
+  
   {
     path: routes.individualcandidatepage,
     element: <IndividualCandidatePage />,
@@ -1938,16 +1945,16 @@ export const publicRoutes = [
     element: <CandidateGrid />,
     route: Route,
   },
-  {
-    path: routes.candidateslist,
-    element: <CandidatesList />,
-    route: Route,
-  },
-  {
-    path: routes.candidateskanban,
-    element: <CandidateKanban />,
-    route: Route,
-  },
+  // {
+  //   path: routes.candidateslist,
+  //   element: <CandidatesList />,
+  //   route: Route,
+  // },
+  // {
+  //   path: routes.candidateskanban,
+  //   element: <CandidateKanban />,
+  //   route: Route,
+  // },
   {
     path: routes.refferal,
     element: <RefferalList />,
@@ -2211,36 +2218,7 @@ export const publicRoutes = [
     element: <Analytics />,
     route: Route,
   },
-  {
-    path: routes.superAdminCompanies,
-    element: <Companies />,
-    route: Route,
-  },
-  {
-    path: routes.superAdminSubscriptions,
-    element: <Subscription />,
-    route: Route,
-  },
-  {
-    path: routes.superAdminPackages,
-    element: <Packages />,
-    route: Route,
-  },
-  {
-    path: routes.superAdminPackagesGrid,
-    element: <PackageGrid />,
-    route: Route,
-  },
-  {
-    path: routes.superAdminDomain,
-    element: <Domain />,
-    route: Route,
-  },
-  {
-    path: routes.superAdminPurchaseTransaction,
-    element: <PurchaseTransaction />,
-    route: Route,
-  },
+ 
 ];
 
 export const authRoutes = [
@@ -2393,16 +2371,39 @@ export const userRoutes = [
  
   {
       path: routes.superadmin,
-      element: <Superadmin />,
+      element: <SuperAdminDashboard />,
+      route:Route,
   },
   {
-    path: routes.employeeDashboard,
-    element: <HomeDashboard />,
+    path: routes.superAdminCompanies,
+    element: <Companies />,
     route: Route,
   },
   {
-    path: routes.employeeDashboard,
-    element: <EmployeeDashboard />,
+    path: routes.superAdminSubscriptions,
+    element: <Subscription />,
     route: Route,
   },
+  {
+    path: routes.superAdminPackages,
+    element: <Packages />,
+    route: Route,
+  },
+  {
+    path: routes.superAdminPackagesGrid,
+    element: <PackageGrid />,
+    route: Route,
+  },
+  {
+    path: routes.superAdminDomain,
+    element: <Domain />,
+    route: Route,
+  },
+  {
+    path: routes.superAdminPurchaseTransaction,
+    element: <PurchaseTransaction />,
+    route: Route,
+  },
+
+
 ]

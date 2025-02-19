@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Outlet, useLocation } from "react-router";
 import Header from "../core/common/header";
-import Sidebar from "../core/common/sidebar";
+import Sidebar from "./super-admin/sidebar/superadminsidebar";
 import ThemeSettings from "../core/common/theme-settings";
 import { useEffect, useState } from "react";
 import HorizontalSidebar from "../core/common/horizontal-sidebar";
@@ -96,9 +96,8 @@ const UserLayout = () => {
           >
             <Header />
             <Sidebar />
-            <HorizontalSidebar />
-            <TwoColumnSidebar/>
-            <StackedSidebar/>
+            
+       
             <Outlet />
             <DeleteModal/>
             {!location.pathname.includes("layout") && <ThemeSettings />}
@@ -111,9 +110,7 @@ const UserLayout = () => {
           >
             <Header />
             <Sidebar />
-            <HorizontalSidebar />
-            <TwoColumnSidebar/>
-            <StackedSidebar/>
+          
             <Outlet />
             <DeleteModal/>
             {!location.pathname.includes("layout") && <ThemeSettings />}

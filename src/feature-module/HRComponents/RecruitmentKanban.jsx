@@ -2,10 +2,86 @@ import React from 'react'
 import { all_routes } from '../router/all_routes';
 import { Link } from 'react-router-dom';
 import HiringTaskCard from './HiringTaskCard';
+import CollapseHeader from '../../core/common/collapse-header/collapse-header';
 
 const Recruitment = () => {
   return (
     <div className='page-wrapper'>
+
+<div className="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3">
+                        <div className="my-auto mb-2">
+                           
+                            <nav>
+                                <ol className="breadcrumb mb-0">
+                                    <li className="breadcrumb-item">
+                                        <Link to={all_routes.homedashboard}>
+                                            <i className="ti ti-smart-home" />
+                                        </Link>
+                                    </li>
+                                    <li className="breadcrumb-item">hr</li>
+                                    <li className="breadcrumb-item active" aria-current="page">
+                                         Recruitment kanban
+
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div className="d-flex my-xl-auto right-content align-items-center flex-wrap">
+                            <div className="me-2 mb-2">
+                                <div className="d-flex align-items-center border bg-white rounded p-1 me-2 icon-list">
+                                    <Link
+                                        to={all_routes.recruitment}
+                                        className="btn btn-icon btn-sm me-1"
+                                    >
+                                           <i className="fa-solid fa-table-columns" />
+                                    </Link>
+                                    <Link
+                                        to={all_routes.candidatelist}
+                                        className="btn btn-icon btn-sm  me-1"
+                                    >
+                                        <i className="ti ti-list-tree" />
+                                    </Link>
+                                  
+                                </div>
+                            </div>
+                            {/* <div className="me-2 mb-2">
+                                <div className="dropdown">
+                                    <Link
+                                        to="#"
+                                        className="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                                        data-bs-toggle="dropdown"
+                                    >
+                                        <i className="ti ti-file-export me-1" />
+                                        Export
+                                    </Link>
+                                    <ul className="dropdown-menu  dropdown-menu-end p-3">
+                                        <li>
+                                            <Link
+                                                to="#"
+                                                className="dropdown-item rounded-1"
+                                            >
+                                                <i className="ti ti-file-type-pdf me-1" />
+                                                Export as PDF
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                to="#"
+                                                className="dropdown-item rounded-1"
+                                            >
+                                                <i className="ti ti-file-type-xls me-1" />
+                                                Export as Excel{" "}
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> */}
+                            <div className="head-icons ms-2">
+                            <CollapseHeader />
+                            </div>
+                        </div>
+                    </div>
+
 
   <div className="card mt-2">
     <div className="card-header d-flex flex-wrap justify-content-between align-items-center">
@@ -22,12 +98,7 @@ const Recruitment = () => {
           </span>{" "}
           Billing Last Week
         </span>
-        <span className="ms-3 fw-semibold">
-          <span>
-            <i className="fa-solid fa-table-columns" />
-          </span>{" "}
-          Board
-        </span>
+        
         <span className="ms-3 fw-semibold text-secondary">12 more...</span>
         <span className="ms-3 fw-semibold text-secondary">
           <span>

@@ -28,7 +28,7 @@ const Login = () => {
         <div className="row">
 
           <div className="col-lg-5">
-            <div className="login-background position-relative d-lg-flex align-items-center justify-content-center d-none flex-wrap vh-100">
+            <div className="login-background position-relative d-lg-flex align-items-center justify-content-center d-none flex-wrap vh-100 ">
               <div className="bg-overlay-img">
                 <ImageWithBasePath src="assets/img/bg/bg-01.png" className="bg-1" alt="Img" />
                 <ImageWithBasePath src="assets/img/bg/bg-02.png" className="bg-2" alt="Img" />
@@ -37,7 +37,7 @@ const Login = () => {
               <div className="authentication-card w-100">
                 <div className="authen-overlay-item border w-100">
                   <h1 className="text-white display-1">
-                    Empowering people <br /> through seamless HR <br /> management.
+                   TeamOne  <br />  <br /> 
                   </h1>
                   <div className="my-4 mx-auto authen-overlay-img">
                     <ImageWithBasePath src="assets/img/bg/authentication-bg-01.png" alt="Img" />
@@ -140,11 +140,27 @@ const Login = () => {
 
                       <div className="mb-3">
                         <div className="d-flex justify-content-between">
-                          <button  className="btn btn-primary w-48 me-2"
-                           onClick={() => navigation(all_routes.superadmin)}
-                            >
-                              Super Admin
-                            </button>
+{/*                          
+                            <button  type="button" // Prevents form submission
+  className="btn btn-primary w-48 me-2"
+  onClick={(e) => {
+    e.preventDefault(); // Stops form submission
+    window.location.href = "https://bpavsuperadmin.netlify.app/";
+  }}
+>
+  Super Admin
+</button> */}
+<a
+  href="https://bpavsuperadmin.netlify.app/"
+  className="btn btn-primary w-48 me-2"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Super Admin
+</a>
+
+
+                    
                             <button  className="btn btn-primary w-48 me-2"
                            onClick={() => navigation(all_routes.homedashboard)}
                             >

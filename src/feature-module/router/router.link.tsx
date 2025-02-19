@@ -10,6 +10,8 @@ import MembershipAddon from "../membership/membershipaddon";
 
 import ComingSoon from "../pages/comingSoon";
 import Login from "../auth/login/login";
+
+// import Login from "../Authentication/Login";
 import Register from "../auth/register/register";
 import TwoStepVerification from "../auth/twoStepVerification/twoStepVerification";
 import EmailVerification from "../auth/emailVerification/emailVerification";
@@ -399,13 +401,14 @@ import AttendanceAdmin from "../HRComponents/AttendanceAdmin";
 import DepartmentList from "../HRComponents/DepartmentList";
 import DesignationList from "../HRComponents/DesignationList";
 import ProjectOwner from "../Project/Tables/ProjectOwner";
+import Superadmin from "../Superadmin";
 
 const routes = all_routes;
 export const publicRoutes = [
   {
     path: "/",
     name: "Root",
-    element: <Navigate to="/index" />,
+    element: <Navigate to="/login" />,
     route: Route,
   },
   {
@@ -418,11 +421,11 @@ export const publicRoutes = [
   //   element: <Home />,
   //   route: Route,
   // },
-  {
-    path: routes.employeeDashboard,
-    element: <EmployeeDashboard />,
-    route: Route,
-  },
+  // {
+  //   path: routes.employeeDashboard,
+  //   element: <EmployeeDashboard />,
+  //   route: Route,
+  // },
   {
     path: routes.leadsDashboard,
     element: <LeadsDasboard />,
@@ -2384,3 +2387,22 @@ export const authRoutes = [
  
   
 ];
+
+
+export const userRoutes = [
+ 
+  {
+      path: routes.superadmin,
+      element: <Superadmin />,
+  },
+  {
+    path: routes.employeeDashboard,
+    element: <HomeDashboard />,
+    route: Route,
+  },
+  {
+    path: routes.employeeDashboard,
+    element: <EmployeeDashboard />,
+    route: Route,
+  },
+]
